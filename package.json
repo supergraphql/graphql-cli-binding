@@ -1,0 +1,35 @@
+{
+  "name": "graphql-cli-bundle",
+  "version": "0.1.1",
+  "description": "Processes import statements in a GraphQL schema and outputs a single schema file",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc -d",
+    "test": "npm run build && npm run lint",
+    "lint": "tslint src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supergraphql/graphql-cli-bundle.git"
+  },
+  "keywords": [
+    "graphql-cli"
+  ],
+  "author": "Kim Brandwijk <kim.brandwijk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/supergraphql/graphql-cli-bundle/issues"
+  },
+  "homepage": "https://github.com/supergraphql/graphql-cli-bundle#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "graphql-import": "^0.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^8.5.1",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  }
+}
