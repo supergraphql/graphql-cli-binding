@@ -1,4 +1,6 @@
 # graphql-cli-bundle
+[![npm](https://img.shields.io/npm/v/graphql-cli-bundle.svg?style=for-the-badge)]()
+[![CircleCI](https://img.shields.io/circleci/project/github/supergraphql/graphql-cli-bundle.svg?style=for-the-badge)]()
 Plugin for [`graphql-cli`](https://github.com/graphql-cli/graphql-cli). Processes import statements in a GraphQL schema using [`graphql-import`](https://github.com/graphcool/graphql-import) and outputs a single schema file.
 
 ## Installation
