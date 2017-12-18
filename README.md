@@ -5,7 +5,7 @@ Plugin for [`graphql-cli`](https://github.com/graphql-cli/graphql-cli). Processe
 
 Install `graphql-cli-bundle` either globally (recommended) or locally using your favorite package manager:
 ```shell
-$ yarn add graphql-cli-bundle [--global]
+$ yarn [global] add graphql-cli-bundle
 $ npm install graphql-cli-bundle [--global]
 ```
 
