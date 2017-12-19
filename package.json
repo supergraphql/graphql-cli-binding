@@ -8,7 +8,6 @@
     "prepublish": "npm run build",
     "build": "tsc -d",
     "pretest": "npm run build",
-    "test": "nyc mocha ./dist/**/*.spec.js",
     "lint": "tslint src/**/*.ts"
   },
   "repository": {
@@ -30,11 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^8.5.1",
-    "@types/mocha": "^2.2.44",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2",
-    "mocha": "^4.0.1",
-    "mocha-junit-reporter": "^1.15.0",
-    "nyc": "^11.3.0"
+    "typescript": "^2.6.2"
   }
 }
