@@ -1,7 +1,7 @@
 {
-  "name": "graphql-cli-bundle",
-  "version": "0.1.2",
-  "description": "Processes import statements in a GraphQL schema and outputs a single schema file",
+  "name": "graphql-cli-binding",
+  "version": "0.1.0",
+  "description": "Generates a static binding file for any GraphQL schema and outputs a single code file",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/supergraphql/graphql-cli-bundle.git"
+    "url": "git+https://github.com/supergraphql/graphql-cli-binding.git"
   },
   "keywords": [
     "graphql-cli"
@@ -20,12 +20,12 @@
   "author": "Kim Brandwijk <kim.brandwijk@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/supergraphql/graphql-cli-bundle/issues"
+    "url": "https://github.com/supergraphql/graphql-cli-binding/issues"
   },
-  "homepage": "https://github.com/supergraphql/graphql-cli-bundle#readme",
+  "homepage": "https://github.com/supergraphql/graphql-cli-binding#readme",
   "dependencies": {
     "chalk": "^2.3.0",
-    "graphql-import": "^0.1.8"
+    "graphql-static-binding": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^8.5.1",

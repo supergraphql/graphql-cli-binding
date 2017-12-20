@@ -1,7 +1,9 @@
-export const command = 'bundle [schema]'
-export const describe = 'Process import statements in a schema and output a single schema file'
+export const command = 'bindings [schema]'
+export const describe = 'Generate static bindings for the schema and output to a single code file'
 
-import { importSchema } from 'graphql-import';
+import { generateCode} from 'graphql-static-binding'
+import { generator as tsgenerator } from 'graphql-static-binding/dist/generators/typescript'
+import { generator as jsgenerator } from 'graphql-static-binding/dist/generators/javascript'
 import * as fs from 'fs';
 import * as path from 'path';
 import chalk from 'chalk';
@@ -14,10 +16,20 @@ export const builder = {
     },
     output: {
         alias: 'o',
-        describe: 'Filename of output schema',
+        describe: 'Filename of output code file',
         demandOption: true,
         requiresArg: true,
-        type: 'string',
+        type: 'string'
+    },
+    typescript: {
+        alias: 'ts',
+        describe: 'Generate a Typescript code file',
+        type: 'boolean'
+    },
+    javascript: {
+        alias: 'js',
+        describe: 'Generate a Javascript code file',
+        type: 'boolean'
     },
     force: {
         alias: 'f',
@@ -27,21 +39,32 @@ export const builder = {
 }
 
 export const handler = async (context, argv) => {
-    const schema: string = argv.schema || context.getProjectConfig().schemaPath
-
-    context.spinner.start(`Processing schema ${chalk.green(path.relative('.', schema))}...`)
-    const finalSchema = importSchema(schema)
-    context.spinner.succeed()
-
+    const schemaFile: string = argv.schema || context.getProjectConfig().schemaPath
     const flag = argv.force ? 'w' : 'wx'
-    context.spinner.start(`Writing schema to file ${chalk.green(path.relative('.', argv.output))}...`)
-    fs.writeFile(argv.output, finalSchema, { flag }, err => {
-        if (err) {
-            context.spinner.fail()
-            console.log(chalk.red(err.message))
-        } else {
-            context.spinner.succeed()
-        }
-    })
+
+    const schema = fs.readFileSync(schemaFile, 'utf-8')
+
+    let finalSchema: string
+    if (argv.typescript) {
+        context.spinner.start(`Generating Typescript bindings for schema ${chalk.green(path.relative('.', schemaFile))}...`)
+        finalSchema = generateCode(schema, tsgenerator)
+        context.spinner.succeed()
+
+        const filename = argv.output.endsWith('.ts') ? argv.output : `${argv.output}.ts`
+        context.spinner.start(`Writing code to file ${chalk.green(path.relative('.', filename))}...`)
+        fs.writeFileSync(filename, finalSchema, { flag })
+        context.spinner.succeed()
+    }
+
+    if (argv.javascript) {
+        context.spinner.start(`Generating Javascript bindings for schema ${chalk.green(path.relative('.', schemaFile))}...`)
+        finalSchema = generateCode(schema, tsgenerator)
+        context.spinner.succeed()
+
+        const filename = argv.output.endsWith('.js') ? argv.output : `${argv.output}.js`
+        context.spinner.start(`Writing code to file ${chalk.green(path.relative('.', filename))}...`)
+        fs.writeFileSync(filename, finalSchema, { flag })
+        context.spinner.succeed()
+    }
 
 }
