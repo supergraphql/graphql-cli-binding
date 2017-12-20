@@ -58,7 +58,7 @@ export const handler = async (context, argv) => {
 
     if (argv.javascript) {
         context.spinner.start(`Generating Javascript bindings for schema ${chalk.green(path.relative('.', schemaFile))}...`)
-        finalSchema = generateCode(schema, tsgenerator)
+        finalSchema = generateCode(schema, jsgenerator)
         context.spinner.succeed()
 
         const filename = argv.output.endsWith('.js') ? argv.output : `${argv.output}.js`
