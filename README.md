@@ -1,4 +1,4 @@
-# graphql-cli-bundle [![npm](https://img.shields.io/npm/v/graphql-cli-binding.svg?style=for-the-badge)]() [![CircleCI](https://img.shields.io/circleci/project/github/supergraphql/graphql-cli-binding.svg?style=for-the-badge)]() [![Greenkeeper badge](https://img.shields.io/badge/Greenkeeper-enabled-brightgreen.svg?style=for-the-badge)](https://greenkeeper.io/)  
+# graphql-cli-binding [![npm](https://img.shields.io/npm/v/graphql-cli-binding.svg?style=for-the-badge)]() [![CircleCI](https://img.shields.io/circleci/project/github/supergraphql/graphql-cli-binding.svg?style=for-the-badge)]() [![Greenkeeper badge](https://img.shields.io/badge/Greenkeeper-enabled-brightgreen.svg?style=for-the-badge)](https://greenkeeper.io/)  
 Plugin for [`graphql-cli`](https://github.com/graphql-cli/graphql-cli). Generates static bindings for any GraphQL schema using [`graphql-static-binding`](https://github.com/supergraphql/graphql-static-binding) (WIP!) and outputs a code file.
 
 ## Installation
