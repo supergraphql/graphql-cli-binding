@@ -26,3 +26,7 @@ Options:
   -h, --help          Show help                                        [boolean]
   -v, --version       Show version number                              [boolean]
 ```
+
+## Example
+
+See the example folder for an example schema with Typescript and Javascript generated binding files.
