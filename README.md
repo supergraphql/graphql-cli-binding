@@ -36,3 +36,7 @@ Currently, the following generators are available:
 - `binding-js`: Generate Javascript binding file based on `graphql-binding`
 
 You can also pass your own generator file to `--generator`.
+<hr>
+<p align="center">
+  <img src="https://img.shields.io/badge/built-with_love-blue.svg?style=for-the-badge"/><a href="https://github.com/kbrandwijk" target="-_blank"><img src="https://img.shields.io/badge/by-kim_brandwijk-blue.svg?style=for-the-badge"/></a>
+</p>
