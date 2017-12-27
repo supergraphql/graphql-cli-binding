@@ -30,10 +30,10 @@
   },
   "devDependencies": {
     "@types/node": "8.5.2",
-    "conventional-changelog-eslint": "^0.3.0",
+    "conventional-changelog-eslint": "0.3.0",
     "tslint": "5.8.0",
     "typescript": "2.6.2",
-    "semantic-release": "^11.0.2"
+    "semantic-release": "11.1.0"
   },
   "release": {
     "analyzeCommits": {
