@@ -17,17 +17,26 @@ graphql bindings [schema]
 Generate static bindings for the schema and output to a single code file
 
 Options:
-  --dotenv            Path to .env file                                 [string]
-  -p, --project       Project name                                      [string]
-  --schema            Schema file to process                            [string]
-  --output, -o        Filename of output code file           [string] [required]
-  --typescript, --ts  Generate a Typescript code file                  [boolean]
-  --javascript, --js  Generate a Javascript code file                  [boolean]
-  --force, -f         Force overwriting exissting output file          [boolean]
-  -h, --help          Show help                                        [boolean]
-  -v, --version       Show version number                              [boolean]
+  --dotenv         Path to .env file                                    [string]
+  -p, --project    Project name                                         [string]
+  --schema         Schema file to process                               [string]
+  --output, -o     Filename of output code file              [string] [required]
+  --generator, -g  Generator used to generate binding files             [string]
+  --force, -f      Force overwriting exissting output file             [boolean]
+  -h, --help       Show help                                           [boolean]
+  -v, --version    Show version number                                 [boolean]
 ```
 
-## Example
+## Available generators
 
-See the example folder for an example schema with Typescript and Javascript generated binding files.
+Currently, the following generators are available:
+- `graphcool-ts`: Generate Typescript binding file based on `graphcool-binding`
+- `graphcool-js`: Generate Javascript binding file based on `graphcool-binding`
+- `binding-ts`: Generate Typescript binding file based on `graphql-binding`
+- `binding-js`: Generate Javascript binding file based on `graphql-binding`
+
+You can also pass your own generator file to `--generator`.
+<hr>
+<p align="center">
+  <img src="https://img.shields.io/badge/built-with_love-blue.svg?style=for-the-badge"/><a href="https://github.com/kbrandwijk" target="-_blank"><img src="https://img.shields.io/badge/by-kim_brandwijk-blue.svg?style=for-the-badge"/></a>
+</p>
