@@ -36,6 +36,7 @@
     "semantic-release": "11.1.0"
   },
   "release": {
+    "branch": "master",
     "analyzeCommits": {
       "preset": "eslint"
     },
