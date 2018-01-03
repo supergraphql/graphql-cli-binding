@@ -29,7 +29,7 @@
     "graphql-static-binding": "0.2.1"
   },
   "devDependencies": {
-    "@types/node": "8.5.2",
+    "@types/node": "8.5.5",
     "tslint": "5.8.0",
     "typescript": "2.6.2",
     "semantic-release": "11.1.0"
